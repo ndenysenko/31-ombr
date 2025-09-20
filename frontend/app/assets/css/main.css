@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+
+@plugin "daisyui/theme" {
+  name: "custom";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+
+  /* База: темні відтінки */
+  --color-base-100: #0a0a0a;
+  /* майже чорний */
+  --color-base-200: #161616;
+  --color-base-300: #1f1f1f;
+  --color-base-content: #e5e5e5;
+  /* м'який білий */
+
+  /* Акцент — зелений як символ сили/життя */
+  --color-primary: #c6fb50;
+  /* стриманий глибокий зелений */
+  --color-primary-content: #0a0a0a;
+
+  /* Решта — спокійні відтінки */
+  --color-secondary: #2a2a2a;
+  --color-secondary-content: #f5f5f5;
+
+  --color-accent: #383838;
+  --color-accent-content: #f5f5f5;
+
+  --color-neutral: #2b2b2b;
+  --color-neutral-content: #e5e5e5;
+
+  /* Системні кольори теж приглушені */
+  --color-info: #3a6ea5;
+  /* холодний стальний */
+  --color-info-content: #f5f5f5;
+
+  --color-success: #3b7a57;
+  --color-success-content: #f5f5f5;
+
+  --color-warning: #a68b00;
+  /* глухий золотистий */
+  --color-warning-content: #0a0a0a;
+
+  --color-error: #8b1e1e;
+  /* глибокий червоний */
+  --color-error-content: #f5f5f5;
+
+  /* Радіуси — строгий військовий стиль */
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+
+  /* Мінімалістичний UI */
+  --size-selector: 0.28125rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+.text-steel-gradient {
+  background: linear-gradient(120deg,
+      #d9d9d9 0%,
+      #ffffff 12%,
+      #a0a0a0 28%,
+      #ff4500 42%,
+      #ffae00 58%,
+      #ffffff 72%,
+      #d9d9d9 100%);
+  background-size: 300% 300%;
+  /* більш широкий простір для хвиль */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: fireWaterFlow 5s ease-in-out infinite;
+}
+
+@keyframes fireWaterFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  25% {
+    background-position: 30% 20%;
+  }
+
+  50% {
+    background-position: 60% 40%;
+  }
+
+  75% {
+    background-position: 40% 60%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+
+
+
+@layer base {
+  :root {
+    --font-sans: 'Helvetica', sans-serif;
+    --font-secondary: 'UAFSans', sans-serif;
+    --font-branding: "Volija", serif;
+
+    --color-primary: #b4ca64;
+    --color-secondary: #2c422f;
+    --color-accent: #f9c638;
+
+    --color-border: rgba(255, 255, 255, 0.2);
+
+    --color-dark: #0a0c0b;
+    --darkFaded: #0b0e0c;
+
+    --light: #efeeea;
+    --light2: #fffffe;
+    --lightFaded: rgba(255, 255, 255, 0.2);
+
+    --primary: #2c422f;
+    --primary2: #4d6e44;
+    --primary3: #7b9c56;
+    --primary4: #b4ca64;
+    --primary5: #f9f871;
+  }
+
+}
+
+
+@layer base {
+  h1 {
+    font-size: clamp(3.5rem, 1.4688rem + 6.5vw, 5.125rem);
+    /* ~56px to 82px */
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 1.5rem + 2vw, 5rem);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: clamp(1.3rem, 1rem + 1.3vw, 2.2rem);
+    /* ~24px to 40px */
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+    /* ~20px to 32px */
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: clamp(1.125rem, 0.9rem + 1vw, 1.5rem);
+    /* ~18px to 24px */
+    font-weight: 500;
+  }
+
+  h6 {
+    font-size: clamp(1rem, 0.85rem + 0.8vw, 1.25rem);
+    /* ~16px to 20px */
+    font-weight: 500;
+  }
+
+  p {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    /* ~16px to 20px */
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+#__nuxt {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.accent-text {
+  color: var(---color-brand);
+}
+
+.accent-bg {
+  background: var(---color-brand);
+}
+
+html,
+body {
+  font-family: var(--font-secondary);
+}
+
+section {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 10px;
+  line-height: 110%;
+}
+
+.subheading {
+  margin-bottom: 1.5rem;
+}
+
+.gradient-bg {
+  background-image: linear-gradient(120deg, #0b0e0c, #fffffe1a 51%, #0b0e0c);
+}
+
+.font-branding {
+  font-family: var(--font-branding);
+}
+
+.page-padding {
+  padding: 4rem 1rem;
+}
+
+a {
+  transition: all 300ms ease-in-out;
+}
+
+.link-hover:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+
+@media screen and (max-width: 998px) {
+  .page-padding {
+    padding: 2rem 1rem;
+  }
+}
