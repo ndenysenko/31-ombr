@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies",
+  "info": {
+    "singularName": "vacancy",
+    "pluralName": "vacancies",
+    "displayName": "Vacancy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "requirements": {
+      "type": "blocks"
+    },
+    "conditions": {
+      "type": "blocks"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Medical",
+        "Combat",
+        "Rear"
+      ]
+    },
+    "responsibilities": {
+      "type": "blocks"
+    }
+  }
+}
